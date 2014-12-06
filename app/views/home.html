@@ -1,0 +1,35 @@
+<div class="page-header">
+    <h1>
+        Сontact Manager
+    </h1>
+</div>
+
+<article class="row">
+    <div class="col-md-6">
+        <div class="list-group" data-bind="foreach: numbers">
+            <a class="list-group-item"
+               data-bind="text: name, click: $root.selectedNumber, css: { active: $root.selectedNumber() == $data }"></a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <!--ko with: selectedNumber-->
+            <div class="panel-heading">
+                <h3 class="panel-title" data-bind="text: name"></h3>
+            </div>
+            <div class="panel-body">
+                <p data-bind="text: phoneNumber"></p>
+                <p>
+                    <button class="btn btn-primary" data-bind="click: $root.onContactClick">View more</button>
+                </p>
+            </div>
+            <!--/ko-->
+            <!--ko ifnot: selectedNumber()-->
+            <div class="panel-heading">
+                <h3 class="panel-title">No Contact Selected</h3>
+            </div>
+            <div class="panel-body">Select a number in the list to show details</div>
+            <!--/ko-->
+        </div>
+    </div>
+</article>
