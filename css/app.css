@@ -1,16 +1,17 @@
-﻿html,body{
+﻿html{
   height: 100%;
 }
 body {
-  padding-top: 70px;
-  padding-bottom: 60px;
   height: 100%;
 }
 #top-menu .navbar-search {
   width: 250px;
 }
 #applicationHost{
+  padding-top: 70px;
+  padding-bottom: 60px;
   min-height: 100%;
+  position: relative;
 }
 #applicationHost .splash {
   position: fixed;
