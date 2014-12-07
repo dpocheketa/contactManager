@@ -1,4 +1,4 @@
-define(["knockout", "durandal/app", "durandal/system"], function (ko, app, system) {
+define(["knockout", "durandal/app", "durandal/system", "list"], function (ko, app, system, list) {
     var
         // Public Properties
         numbers = ko.observableArray(),
@@ -32,20 +32,7 @@ define(["knockout", "durandal/app", "durandal/system"], function (ko, app, syste
         loadContacts = function () {
             return system.defer(function (dfd) {
                 setTimeout(function () {
-                    dfd.resolve([
-                        {
-                            name: "Vasya",
-                            phoneNumber: "+380634564545"
-                        },
-                        {
-                            name: "Petya",
-                            phoneNumber: "+380634564590"
-                        },
-                        {
-                            name: "Vanya",
-                            phoneNumber: "+380634994545"
-                        }
-                    ]);
+                    dfd.resolve(list.getAll());
                 }, 500);
             });
         };
